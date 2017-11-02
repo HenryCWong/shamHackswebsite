@@ -57,8 +57,9 @@ app.post('/registerHacker', function(req, res) {
 	console.log(req.body.email);
 	console.log(req.body.foodrestrictions);
 	console.log(req.body.electronicsrequested);
-	
-	writerHackers.write({firstName: req.body.fname, lastName: req.body.lname, email:req.body.email, food:req.body.foodrestrictions, electron:req.body.electronicsrequested});
+	console.log(req.body.shirtsize);
+	console.log(req.body.age);
+	writerHackers.write({firstName: req.body.fname, lastName: req.body.lname, email:req.body.email, food:req.body.foodrestrictions, electron:req.body.electronicsrequested, shirtsize:req.body.shirtsize, age:req.body.age});
 	
 	res.send("Successfully registered!")
 	} catch(ex) {
@@ -86,8 +87,8 @@ app.post('/registerSponsor', function(req, res) {
 	console.log(req.body.email);
 	console.log(req.body.companyName);
 	console.log(req.body.howSponsor);
-	
-	writerSponsors.write({firstName: req.body.fname, lastName: req.body.lname, email:req.body.email, companyName:req.body.companyName, message:req.body.howSponsor});
+	console.log(req.body.shirtsize);
+	writerSponsors.write({firstName: req.body.fname, lastName: req.body.lname, email:req.body.email, companyName:req.body.companyName, message:req.body.howSponsor, shirtsize:req.body.shirtsize});
 	
 	res.send("Successfully registered!")
 	} catch(ex) {
